@@ -1,5 +1,8 @@
 from django.http import HttpResponse
 import datetime
+from django.template import Template,Context
+from django.template import loader
+
 # Request: realizar peticiones
 # HTTPResponse: enviar respuestas
 
@@ -24,3 +27,21 @@ def ageCategory(request, age):
 def getCurrentMoment(request):
     result = "<h1>Momento actual: {0}</h1>".format(datetime.datetime.now().strftime("%A %d/%m/%Y %H:%M:%S"))
     return HttpResponse(result)
+
+def contentHTML(request,name,age):
+    content = """
+    <html>
+    <body>
+    <p>Nombre: %s / Edad: %s</p>
+    </body>
+    </html>
+    """%(name,age)
+    return HttpResponse(content)
+
+def firstTemplate(request):
+    templateOpen = open("C:/djangotutorial/django_proyect_2/MiProyecto/MiProyecto/templates/firstTemplate.html")
+    template = Template(templateOpen.read())
+    templateOpen.close()
+    context = Context()
+    document = template.render(context)
+    return HttpResponse(document)

@@ -16,12 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from MiProyecto.views import welcome, ageCategory, getCurrentMoment
+from MiProyecto.views import welcome, ageCategory, getCurrentMoment, contentHTML, firstTemplate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('bienvenido/', welcome),
     path('categoriaEdad/<int:age>', ageCategory),
     path('obtenerMomentoActual/', getCurrentMoment),
+    path('contenidoHTML/<str:name>/<int:age>', contentHTML),
+    path('primeraPlantilla/', firstTemplate),
 
 ]
