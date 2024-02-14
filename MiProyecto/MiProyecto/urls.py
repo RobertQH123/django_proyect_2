@@ -16,9 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from MiProyecto.views import welcome
+from MiProyecto.views import welcome, ageCategory, getCurrentMoment
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('bienvenido/', welcome)
+    path('bienvenido/', welcome),
+    path('categoriaEdad/<int:age>', ageCategory),
+    path('obtenerMomentoActual/', getCurrentMoment),
+
 ]
