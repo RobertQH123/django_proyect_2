@@ -47,9 +47,10 @@ def firstTemplate(request):
     return HttpResponse(document)
 
 def parametersTemplate(request):
+    language = ["python","java","PHP","javascript","ruby","c++"]
     templateOpen = open("C:/djangotutorial/django_proyect_2/MiProyecto/MiProyecto/templates/parametersTemplate.html")
     template = Template(templateOpen.read())
     templateOpen.close()
-    context = Context({"name":"robert"})
+    context = Context({"name":"robert","language": language})
     document = template.render(context)
     return HttpResponse(document)

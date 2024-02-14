@@ -7,5 +7,14 @@
 </head>
 <body>
     <h1>nombre: {{name}}</h1>
+    <ul>
+        {% for lang in language  %}
+            {% if lang == "java" %}
+            <li style ='color:yellow;' >{{lang}}</li>
+            {% else %}
+                <li>{{lang}}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
 </body>
 </html>
