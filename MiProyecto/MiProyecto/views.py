@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 import datetime
-from django.template import Template,Context
+from django.template import Template,Context,loader
 from django.template import loader
 
 # Request: realizar peticiones
@@ -53,4 +53,11 @@ def parametersTemplate(request):
     templateOpen.close()
     context = Context({"name":"robert","language": language})
     document = template.render(context)
+    return HttpResponse(document)
+
+def loadedTemplate(request):
+    language = ["python","java","PHP","Kotlin","javascript","ruby","c++"]
+    template = loader.get_template("parametersTemplate.html")
+    #context = Context({"name":"robert","language": language})
+    document = template.render({"name":"robert","language": language})
     return HttpResponse(document)
