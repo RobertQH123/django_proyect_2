@@ -65,3 +65,6 @@ def loadedTemplate(request):
 
 def childrenTemplate(request):
     return render(request, "childrenTemplate.html",{})
+
+def childrenTwoTemplate(request):
+    return render(request, "children_2Template.html",{})

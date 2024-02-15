@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from MiProyecto.views import welcome, ageCategory, getCurrentMoment, contentHTML, firstTemplate, parametersTemplate, loadedTemplate, childrenTemplate
-
+from MiProyecto.views import childrenTwoTemplate
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('bienvenido/', welcome),
@@ -28,5 +28,6 @@ urlpatterns = [
     path('parametrosPlantilla/', parametersTemplate),
     path('loadedTemplate/', loadedTemplate),
     path('plantillaHjia/', childrenTemplate),
+    path('plantillaHjia2/', childrenTwoTemplate),
 
 ]
