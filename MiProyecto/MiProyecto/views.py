@@ -2,6 +2,7 @@ from django.http import HttpResponse
 import datetime
 from django.template import Template,Context,loader
 from django.template import loader
+from django.shortcuts import render
 
 # Request: realizar peticiones
 # HTTPResponse: enviar respuestas
@@ -61,3 +62,6 @@ def loadedTemplate(request):
     #context = Context({"name":"robert","language": language})
     document = template.render({"name":"robert","language": language})
     return HttpResponse(document)
+
+def childrenTemplate(request):
+    return render(request, "childrenTemplate.html",{})
